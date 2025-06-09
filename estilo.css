@@ -1,55 +1,58 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0f2027;  /* Fondo oscuro bonito */
     background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
     color: white;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.contenedor {
+    padding: 180px 0 50px 0; /* ← AQUI: padding superior aumentado a 80px */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    gap: 60px;
+}
+
+
+/* Cada bloque de contador */
+.contenedor {
     text-align: center;
 }
 
-
-#contador {
+/* Contadores alineados en fila */
+.contador {
     display: flex;
-    flex-direction: column; /* ← Esto apila los hijos en vertical */
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 20px; /* Separación entre los dos bloques */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-
-#contador div {
+/* Cada bloque de tiempo (días, horas, etc.) */
+.contador div {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-#contador span {
+/* Números grandes */
+.contador span {
     font-size: 3rem;
     font-weight: bold;
     display: block;
 }
 
-#contador p {
+/* Texto pequeño debajo del número */
+.contador p {
     margin: 0;
     font-size: 1.2rem;
 }
 
+/* Estilo del botón */
 .boton {
-    margin-top: 30px;
+    margin-top: 20px;
 }
+
 .boton a {
     display: inline-block;
     padding: 10px 25px;
@@ -61,6 +64,7 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
 }
+
 .boton a:hover {
     background-color: white;
     color: #0f2027;
