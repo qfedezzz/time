@@ -1,5 +1,4 @@
-function actualizarContador() {
-    const fechaInicio = new Date("2025-03-10T00:00:00");
+function actualizarContador(fechaInicio, ids) {
     const ahora = new Date();
     const diferencia = ahora - fechaInicio;
 
@@ -10,15 +9,44 @@ function actualizarContador() {
         const minutos = Math.floor((segundosTotales % 3600) / 60);
         const segundos = segundosTotales % 60;
 
-        document.getElementById("dias").textContent = dias;
-        document.getElementById("horas").textContent = horas;
-        document.getElementById("minutos").textContent = minutos;
-        document.getElementById("segundos").textContent = segundos;
+        document.getElementById(ids.dias).textContent = dias;
+        document.getElementById(ids.horas).textContent = horas;
+        document.getElementById(ids.minutos).textContent = minutos;
+        document.getElementById(ids.segundos).textContent = segundos;
     } else {
-        document.getElementById("contador").textContent = "La fecha aún no ha llegado.";
+        document.getElementById(ids.dias).textContent = "0";
+        document.getElementById(ids.horas).textContent = "0";
+        document.getElementById(ids.minutos).textContent = "0";
+        document.getElementById(ids.segundos).textContent = "0";
     }
 }
 
-// Actualiza cada segundo
-setInterval(actualizarContador, 1000);
-actualizarContador(); 
+function iniciarContadores() {
+    const fecha1 = new Date("2024-10-21T00:00:00"); // Sukuna
+    const fecha2 = new Date("2025-03-10T00:00:00"); // 10 de marzo
+
+    const ids1 = {
+        dias: "dias1",
+        horas: "horas1",
+        minutos: "minutos1",
+        segundos: "segundos1"
+    };
+
+    const ids2 = {
+        dias: "dias2",
+        horas: "horas2",
+        minutos: "minutos2",
+        segundos: "segundos2"
+    };
+
+    setInterval(() => {
+        actualizarContador(fecha1, ids1);
+        actualizarContador(fecha2, ids2);
+    }, 1000);
+
+    // Llamada inmediata para evitar el primer segundo vacío
+    actualizarContador(fecha1, ids1);
+    actualizarContador(fecha2, ids2);
+}
+
+iniciarContadores();
