@@ -1,4 +1,4 @@
-actualizarContador() {
+function actualizarContador() {
     const fechaInicio = new Date("2025-03-10T00:00:00");
     const ahora = new Date();
     const diferencia = ahora - fechaInicio;
@@ -18,3 +18,7 @@ actualizarContador() {
         document.getElementById("contador").textContent = "La fecha aún no ha llegado.";
     }
 }
+
+// Actualiza cada segundo
+setInterval(actualizarContador, 1000);
+actualizarContador(); 
