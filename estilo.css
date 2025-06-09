@@ -12,16 +12,22 @@ body {
 }
 
 .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
 }
 
+
 #contador {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 20px;
-    flex-wrap: wrap;
+    flex-direction: column; /* ← Esto apila los hijos en vertical */
+    align-items: center;
+    gap: 20px; /* Separación entre los dos bloques */
 }
+
 
 #contador div {
     background-color: rgba(255, 255, 255, 0.1);
