@@ -1,0 +1,42 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f2027;  /* Fondo oscuro bonito */
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor {
+    text-align: center;
+}
+
+#contador {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#contador div {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#contador span {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+#contador p {
+    margin: 0;
+    font-size: 1.2rem;
+}
