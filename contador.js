@@ -1,4 +1,4 @@
-function actualizarContador(idPrefix, fechaInicio) {
+function actualizarContador(id, fechaInicio) {
     const ahora = new Date();
     const diferencia = ahora - fechaInicio;
 
@@ -9,26 +9,24 @@ function actualizarContador(idPrefix, fechaInicio) {
         const minutos = Math.floor((segundosTotales % 3600) / 60);
         const segundos = segundosTotales % 60;
 
-        document.getElementById(`${idPrefix}dias`).textContent = dias;
-        document.getElementById(`${idPrefix}horas`).textContent = horas;
-        document.getElementById(`${idPrefix}minutos`).textContent = minutos;
-        document.getElementById(`${idPrefix}segundos`).textContent = segundos;
+        document.getElementById(`dias${id}`).textContent = dias;
+        document.getElementById(`horas${id}`).textContent = horas;
+        document.getElementById(`minutos${id}`).textContent = minutos;
+        document.getElementById(`segundos${id}`).textContent = segundos;
     } else {
-        document.getElementById(`${idPrefix}contador`).textContent = "La fecha aún no ha llegado.";
+        document.getElementById(`contador${id}`).textContent = "La fecha aún no ha llegado.";
     }
 }
 
-// Definir las fechas
 const fechaPrimeraVez = new Date("2024-10-21T00:00:00");
 const fechaMarzo = new Date("2025-03-10T00:00:00");
 
-// Llamar y actualizar ambos contadores
+// Actualizar ambos contadores cada segundo
 setInterval(() => {
-    actualizarContador("", fechaMarzo);      // Para 10 de marzo de 2025
-    actualizarContador("1", fechaPrimeraVez); // Para 21 de octubre de 2024
+    actualizarContador(1, fechaPrimeraVez);
+    actualizarContador(2, fechaMarzo);
 }, 1000);
 
-// Llamada inicial
-actualizarContador("", fechaMarzo);
-actualizarContador("1", fechaPrimeraVez);
-
+// Llamada inicial para que no espere un segundo
+actualizarContador(1, fechaPrimeraVez);
+actualizarContador(2, fechaMarzo);
